@@ -11,8 +11,13 @@ const AuthProfile = () => {
   return (
     isAuthenticated && (
       <div>
-        <p>Username: {user.name}</p>
-        <p>Email: {user.email}</p>
+        <article className='column'>
+            <ul>
+            {Object.keys(user).map((objKey, i) => (
+                <li key={i}>{objKey}: {user[objKey]}</li>
+            ))}
+        </ul>
+        </article>
       </div>
     )
   );

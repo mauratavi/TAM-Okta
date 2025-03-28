@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import AuthProfile from './components/authProfile';
+import TileTemplate from './components/tileTemplates';
 
 function App() {
   const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } =
@@ -16,10 +18,16 @@ function App() {
   if (isAuthenticated) {
     return (
       <div>
-        Hello {user.name}{' '}
-        <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-          Log out
-        </button>
+      <h2>Welcome, {user.name}{' '}</h2>
+      <br></br>
+      <h3>Profile Details:</h3>
+      <p><AuthProfile /></p>
+      <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+        Log out
+      </button>
+      <div>
+        <TileTemplate />
+      </div>
       </div>
     );
   } else {

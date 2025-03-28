@@ -1,11 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Noto Sans;
+  background: #000000;
+  color: #c4c4c4;
+  text-align: justify;
+  padding-left: 18%;
+  padding-top: 8%;
+   padding-right: 18%;
+  line-height: 160%;
 }
+h1 {
+  color: #6588cc;
+}
+h2{
+  color: #b7c5e2;
+}
+h3{
+  color: #f280d0;
+}
+h4{
+  color: #225588;
+}
+th{
+  color: #225588;
+}
+tr{
+  text-align: left;
+  vertical-align: top;
+}
+
+
+.header {
+  background: #000000;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+button{
+  border: 2px solid;
+  border-color: #c4c4c4;
+  background-color: #000000;
+  color: #f280d0;
+  padding: 14px 14px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  transition: 0.4s;
+  border-radius: 8px;
+}
+
+
+button:hover {
+  border-color: #f280d0;
+  color: #c4c4c4;
+  background-color: #101010;
+}
+.active{ 
+ border-left: 2px solid;
+  color: #c4c4c4;
+  background-color: #101010;
+  border-radius: 8px 8px 0px 0px;
+  border-left:solid #f280d0 2px;
+    border-right: solid #f280d0 2px;
+    border-top: solid #f280d0 2px;
+    border-bottom: solid 0px;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  border-color: #f280d0;
+	background-color: #101010;
+  border-radius:0 0 8px 8px;
+  border-left: solid #f280d0 2px;
+    border-right: solid #f280d0 2px;
+    border-top: solid 0px;
+    border-bottom: solid #f280d0 2px;
+}
+
+.img-right {
+     float: right;
+  padding: 0px 10px 20px 20px;
+   max-width: 40%; 
+    height: auto; 
+   }
+.img-left {
+    /* Removed float to avoid conflict with inline-block */
+  padding: 0px 10px 20px 20px;
+   max-width: 25%; 
+    height: auto; 
+   }
+div {
+    overflow:hidden;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 #383838;
+  transition: 0.3s;
+  border-radius: 15px 15px 15px 15px;
+  padding: 12px;
+  max-width: 28%;
+  display: inline-block;
+  margin: 1%;
+  justify-content: auto;
+  text-align: left;
+  height: auto; /* Allow height to adjust based on content */
+}
+
+
+.card:hover {
+  box-shadow: 0 5px 10px 0 #f280d0;
+}
+
+.container {
+  padding: 10px;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: stretch;
+  text-align: left;
+  
+  
+  
+}
+.card-img{
+  border-radius: 5%; 
+   aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
+}
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* stack cards */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

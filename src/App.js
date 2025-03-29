@@ -6,13 +6,24 @@ import TileTemplate from './components/tileTemplates';
 function App() {
   const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } =
     useAuth0();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Oops... {error.message}</div>;
-  }
+  
+   if (isLoading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return (
+        <div>
+          <p>Oops... {error.message}</p>
+          <button
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin }, federated: true })
+            }
+          >
+            Login
+          </button>
+        </div>
+      );
+    }
 
   if (isAuthenticated) {
     return (
